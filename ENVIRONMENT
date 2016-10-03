@@ -1,0 +1,31 @@
+############################################################
+# SPARK NOTIFICATION
+#
+# Modify these values if you would like spark notifications
+############################################################
+
+SPARK_TOKEN=<ADD TOKEN>
+SPARK_ROOM=<id of spark room>
+
+############################################################
+# APIC-EM Information
+#
+# The application will default to the devnet APIC-EM sandbox
+# uncomment and add your information, if you would like to
+# use your own APIC EM
+############################################################
+
+#APIC_URL=https://myapic.com
+#APIC_USER=admin
+#APIC_PASSWORD=supersecret
+
+############################################################
+# APIC-EM Information
+#
+# The application will default to the devnet APIC-EM sandbox
+# uncomment and add your information, if you would like to
+# use your own APIC EM.
+############################################################
+
+# LOGO=http://somesite.com/somelogo.png
+# TITLE="My App Portal"

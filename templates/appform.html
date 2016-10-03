@@ -1,0 +1,27 @@
+<!-- Latest compiled and minified CSS -->
+{% extends 'layout.html' %}
+
+<head>
+    <title>App Submission Page</title>
+</head>
+
+<body>
+{% block content %}
+
+<p align="center">
+<form name="jump" class="center">
+    <select id="typeselector" name="menu" class="form-control" onchange="gotoPage(this)">
+        <option value="#">Start by telling us how you'd like to classify your app</option>
+        <option value="app/url">Classify based on URL</option>
+        <option value="app/ipport">Classify based on IP/Port</option>
+    </select>
+</form>
+
+<script type="text/javascript">
+    function gotoPage(select){
+        window.location = select.value;
+    }
+</script>
+</body>
+
+{% endblock %}
