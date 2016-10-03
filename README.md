@@ -8,7 +8,7 @@ consumed in EasyQos policies
 
 # Configuration
 
-set the following environment variables, if not set, these will default to the APIC-EM sandbox on DevNet
+Set the following environment variables, if not set, these will default to the APIC-EM sandbox on DevNet.
 
 
 ```
@@ -23,6 +23,9 @@ Additionally, if you would like notifications on Cisco Spark when applications g
 export SPARK_TOKEN=<SPARK TOKEN>
 export SPARK_ROOM=<id of spark room>
 ```
+
+If you are using the DevNet Sanbox, you can login to see the changes pushed by this application at:
+https://sandboxapic.cisco.com/
 
 
 # Running
