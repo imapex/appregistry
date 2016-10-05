@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, flash, redirect
+from flask_restful import Api, Resource, reqparse
 from flask_wtf import Form
 from wtforms import StringField, SelectField
 from wtforms.validators import DataRequired
@@ -9,6 +10,7 @@ import os
 
 app = Flask(__name__)
 app.secret_key = "qsdlkfjasdlkfjawlk4j324lj2wlkrfjasdlkfjsa"
+api = Api(app)
 
 APIC_EM = os.getenv("APIC_EM_URL", 'https://sandboxapic.cisco.com')
 USERNAME = os.getenv("APIC_EM_USERNAME", 'devnetuser')
@@ -227,6 +229,24 @@ def ipport():
                       category="alert-danger")
 
             return redirect('/')
+
+parser = reqparse.RequestParser()
+parser.add_argument('LOGO')
+parser.add_argument("TITLE")
+
+class Customize(Resource):
+    def post(self):
+        args = parser.parse_args()
+        print args
+        if "LOGO" in args.keys():
+            os.environ["LOGO"] = args["LOGO"]
+        if "TITLE" in args.keys():
+            os.environ["TITLE"] = args["TITLE"]
+        return {"TITLE": title(),
+                "LOGO": logo()
+                }
+
+api.add_resource(Customize, '/api/customize')
 
 
 if __name__ == "__main__":

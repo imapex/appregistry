@@ -60,3 +60,8 @@ to suit your demonstration.
     export TITLE = "My company name"
     export LOGO = "http://location.for/mylogo.jpg"
 
+These settings are also exposed as a RESTFul API
+
+    curl -X POST -H "Content-Type: application/json" \
+    -d '{"LOGO": "http://mysite.com","TITLE": "my custom name"}' \
+    "http://127.0.0.1:5000/api/customize"
